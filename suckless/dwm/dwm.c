@@ -1088,10 +1088,12 @@ manage(Window w, XWindowAttributes *wa)
 	c->y = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
 	grabbuttons(c, 0);
-	if (!c->isfloating)
+	if (!c->isfloating){
 		c->isfloating = c->oldstate = trans != None || c->isfixed;
-	if (c->isfloating)
+	}
+	if (c->isfloating){
 		XRaiseWindow(dpy, c->win);
+	}
 	if( attachbelow )
 		attachBelow(c);
 	else
