@@ -8,10 +8,10 @@ if status is-interactive
     alias up='sudo pacman -Syu'
     alias lang='setxkbmap -layout us,ara -option grp:alt_shift_toggle'
     alias tt='tt -showwpm -n 25'
-    alias cdwm='code ~/suckless/'
-    alias mdwm='cd ~/suckless/dwm; sudo make clean install; cd ~'
-    alias mst='cd ~/suckless/st; sudo make clean install; cd ~'
-    alias mdmenu='cd ~/suckless/dmenu; sudo make clean install; cd ~'
+    alias cdwm='code ~/Dotfiles/suckless/'
+    alias mdwm='cd ~/Dotfiles/suckless/dwm; sudo make clean install; cd ~'
+    alias mst='cd ~/Dotfiles/suckless/st; sudo make clean install; cd ~'
+    alias mdmenu='cd ~/Dotfiles/suckless/dmenu; sudo make clean install; cd ~'
 end
 
 starship init fish | source
