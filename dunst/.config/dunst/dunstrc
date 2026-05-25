@@ -1,0 +1,37 @@
+[global]
+    # Geometry and Appearance
+    width = 300
+    height = 150
+    offset = 20x20
+    origin = top-right
+    transparency = 5
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 2
+    
+    # Rounded corners to match your terminal/windows
+    corner_radius = 10
+
+    # Fonts and Colors
+    font = JetBrainsMono Nerd Font 10
+    # Using Gruvbox Gold/Yellow for the global frame color
+    frame_color = "#d79921"
+    separator_color = "#d79921"
+
+[urgency_low]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    frame_color = "#689d6a"  # Muted Green/Aqua
+    timeout = 1
+
+[urgency_normal]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    frame_color = "#d79921"  # Muted Yellow
+    timeout = 1
+
+[urgency_critical]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    frame_color = "#cc241d"  # Gruvbox Red
+    timeout = 3
