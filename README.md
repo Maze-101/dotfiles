@@ -1,9 +1,9 @@
 ---
 
-![image](Assets/desktop1.png)
+![image](Assets/knights.png)
 
 ---
 
-![image](Assets/desktop2.png)
+![image](Assets/spidy.png)
 
 ---
