@@ -1,5 +1,5 @@
 if status is-interactive
-    alias f='fastfetch'
+    alias ff='fastfetch'
     alias c='code'
     alias gc='git commit'
     alias p='poweroff'
@@ -12,4 +12,5 @@ if status is-interactive
     alias mdwm='cd ~; ./Dotfiles/install.sh; cd -'
 end
 
+fastfetch
 starship init fish | source
