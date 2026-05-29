@@ -61,17 +61,12 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-// static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
-static const char *termcmd[]  = { "kitty", NULL };
 static const char *screenshotcmd[] = { "sh", "-c", "d=~/Pictures/Screenshots; i=1; while [ -f \"$d/screenshot$i.png\" ]; do i=$((i+1)); done; f=\"$d/screenshot$i.png\"; maim -s \"$f\" && xclip -selection clipboard -t image/png -i \"$f\"", NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
 static const char *lockcmd[] = { "/usr/local/bin/slock", NULL };
-static const char *browser[] = { "brave", NULL };
-static const char *notes[] = { "obsidian", NULL };
+static const char *termcmd[] = { "kitty", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -79,10 +74,6 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume,              spawn,          {.v = downvol } },
 	{ 0, XF86XK_AudioMute,                     spawn,          {.v = mutevol } },
 	{ 0, XF86XK_AudioRaiseVolume,              spawn,          {.v = upvol   } },
-	{ MODKEY,                       XK_b,      spawn,          {.v = browser } },
-	{ MODKEY,                       XK_o,      spawn,          {.v = notes } },
-	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },       		// change focus to the window below

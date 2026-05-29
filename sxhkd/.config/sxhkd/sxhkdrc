@@ -1,0 +1,14 @@
+###############################
+###########  MAIN  ############
+###############################
+
+super + b
+        $BROWSER
+super + Return
+        $TERMINAL
+super + o
+        $NOTES
+super + c
+        $IDE
+super + d
+        $LAUNCHER
