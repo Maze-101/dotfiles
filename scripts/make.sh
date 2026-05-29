@@ -4,7 +4,7 @@ var1='sudo make clean install'
 var2='sudo rm config.h'
 
 echo "Building suckless software..."
-cd ~/Dotfiles/suckless/dwm && $var2 && $var1
+cd ~/dotfiles/suckless/dwm && $var2 && $var1
 cd ../slock && $var2 && $var1
 cd ../dwmblocks && sudo rm blocks.h && $var1
 

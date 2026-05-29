@@ -8,8 +8,8 @@ if status is-interactive
     alias up='sudo pacman -Syu'
     alias l='setxkbmap -layout us,ara -option grp:alt_shift_toggle'
     alias tt='tt -showwpm -n 25'
-    alias cdwm='code ~/Dotfiles/suckless/'
-    alias mdwm='cd ~; ./Dotfiles/scripts/make.sh; cd -'
+    alias cdo='code ~/dotfiles/'
+    alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
 end
 
 fastfetch
