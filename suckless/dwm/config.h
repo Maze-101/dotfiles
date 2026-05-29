@@ -84,18 +84,16 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
-	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },              		// toggle bar
+	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },       		// change focus to the window below
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },       		// change focus to the window above
 	{ MODKEY,                       XK_h,      incnmaster,     {.i = +1 } },       		// increases  masters by 1
 	{ MODKEY,                       XK_v,      incnmaster,     {.i = -1 } },       		// decreases masters by 1
-	{ MODKEY|ShiftMask,             XK_i,      setmfact,       {.f = -0.05} },     		// shrinks left window/s
-	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },     		// shrinks right window/s
-	{ MODKEY,                       XK_z,      zoom,           {0} },              		// changes master window
 	{ MODKEY,                       XK_x,      killclient,     {0} },  			   	 	// kill window
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, 	// changes layout to tiling
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} }, 	// changes layout to floating
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },              		// toggle bar
+	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },     		// shrinks left window/s
+	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },     		// shrinks right window/s
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },              		// changes master window
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -106,13 +104,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	// unnecessary shit
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 };
 
 /* button definitions */
