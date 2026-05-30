@@ -1,5 +1,5 @@
 ---
 
-![image](Assets/spidy.png)
+![image](assets/spidy.png)
 
 ---
