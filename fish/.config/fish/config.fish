@@ -10,6 +10,7 @@ if status is-interactive
     alias tt='tt -showwpm -n 25'
     alias cdo='code ~/dotfiles/'
     alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
+    alias y='yazi'
 end
 
 fastfetch
