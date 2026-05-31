@@ -12,9 +12,9 @@ static const char *fonts[]          = { "JetBrainsMono Nerd Fonts:size=10", "Not
 static const char dmenufont[]       = "Noto Color Emoji:size=10";
 static const char col_gray1[]       = "#1b1b1b";
 static const char col_gray2[]       = "#1b1b1b";
-static const char col_gray3[]       = "#ffffff";
+static const char col_gray3[]       = "#a89984";
 static const char col_gray4[]       = "#1b1b1b";
-static const char col_cyan[]        = "#b68b26";
+static const char col_cyan[]        = "#86620e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
