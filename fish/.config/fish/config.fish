@@ -7,6 +7,7 @@ if status is-interactive
     ########### git #############
     alias gc='git commit'
     alias gp='git push -u origin main'
+    alias ga='git add .'
     ######### system ############
     alias p='poweroff'
     alias r='sudo reboot now'
