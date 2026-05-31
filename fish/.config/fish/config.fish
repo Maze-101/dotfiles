@@ -5,7 +5,7 @@ if status is-interactive
     alias cdo='code ~/dotfiles/'
     alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
     ########### git #############
-    alias gc='git commit'
+    alias gc='git commit -m'
     alias gp='git push -u origin main'
     alias ga='git add .'
     ######### system ############
