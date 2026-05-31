@@ -1,4 +1,5 @@
 if status is-interactive
+    bind \b backward-kill-word
     alias ff='fastfetch'
     alias c='code'
     alias gc='git commit'
@@ -10,7 +11,6 @@ if status is-interactive
     alias tt='tt -showwpm -n 25'
     alias cdo='code ~/dotfiles/'
     alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
-    alias y='yazi'
 end
 
 fastfetch
@@ -21,3 +21,4 @@ set -gx BROWSER "brave"
 set -gx NOTES "obsidian"
 set -gx IDE "code"
 set -gx LAUNCHER "rofi -show drun"
+set -gx FILE_MANAGER "yazi"

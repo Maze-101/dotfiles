@@ -13,6 +13,6 @@ super + c
 super + d
         fish -c "$LAUNCHER"
 super + y
-        $TERMINAL -e "yazi"
+        $TERMINAL -e "$FILE_MANAGER"
 super + p
         mpv (xclip -o)

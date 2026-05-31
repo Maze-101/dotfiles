@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -93,44 +93,41 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+/* Terminal colors (16 first used for dimmed distinction) */
+const char *colorname[] = {
+	/* 16 normal colors */
+	"#1b1b1b", /* 0: black  (Your custom deeper background) */
+	"#cc241d", /* 1: red    */
+	"#98971a", /* 2: green  */
+	"#d79921", /* 3: yellow */
+	"#458588", /* 4: blue   */
+	"#b16286", /* 5: magenta*/
+	"#689d6a", /* 6: cyan   */
+	"#a89984", /* 7: white  */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#928374", /* 8:  bright black  */
+	"#fb4934", /* 9:  bright red    */
+	"#b8bb26", /* 10: bright green  */
+	"#fabd2f", /* 11: bright yellow */
+	"#83a598", /* 12: bright blue   */
+	"#d3869b", /* 13: bright magenta*/
+	"#8ec07c", /* 14: bright cyan   */
+	"#ebdbb2", /* 15: bright white  */
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"#1b1b1b", /* default background colour */
+	"#ebdbb2", /* 256: default foreground color (Gruvbox Cream) */
+	"#1b1b1b", /* 257: default background color (Your custom deep BG) */
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
@@ -141,7 +138,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
@@ -184,7 +181,7 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
@@ -193,9 +190,9 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_I,           zoom,           {.f = +1} },	// zoom in
+	{ TERMMOD,              XK_O,	        zoom,           {.f = -1} },	// zoom out
+	{ TERMMOD,              XK_BackSpace,   zoomreset,      {.f =  0} },	// default
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
@@ -242,6 +239,7 @@ static uint ignoremod = Mod2Mask|XK_SWITCH_MOD;
  */
 static Key key[] = {
 	/* keysym           mask            string      appkey appcursor */
+	{ XK_BackSpace,     ControlMask,    "\b",            0,    0},
 	{ XK_KP_Home,       ShiftMask,      "\033[2J",       0,   -1},
 	{ XK_KP_Home,       ShiftMask,      "\033[1;2H",     0,   +1},
 	{ XK_KP_Home,       XK_ANY_MOD,     "\033[H",        0,   -1},
