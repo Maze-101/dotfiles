@@ -13,6 +13,7 @@ if status is-interactive
     alias y='yazi'
 end
 
+fastfetch
 starship init fish | source
 
 set -gx TERMINAL "st"
