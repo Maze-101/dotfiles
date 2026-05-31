@@ -12,3 +12,7 @@ super + c
         $IDE
 super + d
         fish -c "$LAUNCHER"
+super + y
+        $TERMINAL -e "yazi"
+super + p
+        mpv (xclip -o)
