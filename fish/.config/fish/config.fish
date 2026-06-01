@@ -1,6 +1,6 @@
 if status is-interactive
     bind \b backward-kill-word
-    ###### basic navigation #####
+    ####### basic aliases #######
     alias ff='fastfetch'
     alias cdo='code ~/dotfiles/'
     alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
