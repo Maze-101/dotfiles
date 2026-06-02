@@ -5,7 +5,6 @@ if status is-interactive
     alias ff='fastfetch'
     alias cdo='code ~/dotfiles/'
     alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
-    alias gem='npx @google/gemini-cli'
     ########### git #############
     alias gc='git commit -m'
     alias gp='git push -u origin main'
