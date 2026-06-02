@@ -1,6 +1,7 @@
 if status is-interactive
     bind \b backward-kill-word
     ####### basic aliases #######
+    alias c='code'
     alias ff='fastfetch'
     alias cdo='code ~/dotfiles/'
     alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
@@ -18,7 +19,6 @@ if status is-interactive
     alias tt='tt -showwpm -n 25'
 end
 
-fastfetch
 starship init fish | source
 
 ##########################
