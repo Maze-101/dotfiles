@@ -16,6 +16,9 @@ if status is-interactive
     alias up='sudo pacman -Syu'
     ####### touch typing ########
     alias tt='tt -showwpm -n 25'
+    ########## yt-dlp ###########
+    alias pl='yt-dlp -f "bestvideo[height<=720][fps<=60]+bestaudio/best" --embed-chapters -o "%(playlist_index)s - %(title)s.%(ext)s"'
+    alias v='yt-dlp --embed-chapters'
 end
 
 starship init fish | source
