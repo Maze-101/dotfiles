@@ -13,7 +13,7 @@ config.colors = {
   background = '#1b1b1b',
 }
 
--- 3. Adjust padding (left, right, top, bottom)
+-- 3. Window settings
 config.window_padding = {
 	left = 0,
 	right = 0,
