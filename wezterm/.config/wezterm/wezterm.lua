@@ -22,6 +22,7 @@ config.window_padding = {
 }
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
+config.font_size = 11.0
 
 -- 4. Keybindings for zooming with Alt + i / Alt + o
 config.keys = {
