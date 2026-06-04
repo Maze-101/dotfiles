@@ -15,11 +15,13 @@ config.colors = {
 
 -- 3. Adjust padding (left, right, top, bottom)
 config.window_padding = {
-  left = '12px',
-  right = '12px',
-  top = '12px',
-  bottom = '12px',
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0
 }
+config.enable_tab_bar = false
+config.window_close_confirmation = "NeverPrompt"
 
 -- 4. Keybindings for zooming with Alt + i / Alt + o
 config.keys = {
