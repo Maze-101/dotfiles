@@ -14,6 +14,7 @@ if status is-interactive
     alias r='sudo reboot now'
     alias s='sudo pacman -S'
     alias up='sudo pacman -Syu'
+    alias r='sudo pacman -Rns'
     ####### touch typing ########
     alias tt='tt -showwpm -n 25'
     ########## yt-dlp ###########
