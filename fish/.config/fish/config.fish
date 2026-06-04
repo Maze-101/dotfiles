@@ -27,7 +27,7 @@ starship init fish | source
 #######  GLOBALS  ########
 ##########################  
 
-set -gx TERMINAL "kitty"
+set -gx TERMINAL "wezterm"
 set -gx BROWSER "brave"
 set -gx NOTES "obsidian"
 set -gx IDE "code"

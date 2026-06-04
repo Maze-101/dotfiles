@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	{ "Zathura",        NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "obsidian",       NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Code",    	    NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "st",		        NULL,       NULL,       1 << 0,       0,           -1 },	
+	{ "org.wezfurlong.wezterm",		        NULL,       NULL,       1 << 0,       0,           -1 },	
 };
 
 /* layout(s) */
