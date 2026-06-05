@@ -11,7 +11,6 @@ if status is-interactive
     alias ga='git add .'
     ######### system ############
     alias p='poweroff'
-    alias r='sudo reboot now'
     alias s='sudo pacman -S'
     alias up='sudo pacman -Syu'
     alias r='sudo pacman -Rns'
@@ -20,6 +19,11 @@ if status is-interactive
     ########## yt-dlp ###########
     alias pl='yt-dlp -f "bestvideo[height<=720][fps<=60]+bestaudio/best" --embed-chapters -o "%(playlist_index)s - %(title)s.%(ext)s"'
     alias v='yt-dlp --embed-chapters'
+    ########## tmux #############
+    alias t='tmux'
+    alias tat='tmux attach -t'
+    alias trs='tmux rename-sesseion -t'
+    alias trw='tmux rename-window -t'
 end
 
 starship init fish | source
