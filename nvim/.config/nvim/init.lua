@@ -1,5 +1,5 @@
 require("options")
-require("plugins")
+require("lazy-nvim")
 require("keymaps")
 
 vim.diagnostic.config({
