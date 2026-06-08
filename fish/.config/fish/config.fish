@@ -9,6 +9,7 @@ if status is-interactive
     alias gc='git commit -m'
     alias gp='git push -u origin main'
     alias ga='git add .'
+    alias gb='git switch -c'
     ######### system ############
     alias p='poweroff'
     alias s='sudo pacman -S'
@@ -38,3 +39,6 @@ set -gx NOTES "obsidian"
 set -gx IDE "code"
 set -gx LAUNCHER "rofi -show drun"
 set -gx FILE_MANAGER "yazi"
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
