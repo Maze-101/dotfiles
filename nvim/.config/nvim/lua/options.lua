@@ -20,7 +20,7 @@ vim.opt.shiftwidth = 4
 vim.opt.clipboard = "unnamedplus"
 
 -- cursor in the middle while scrolling
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 10
 
 -- splits the screen to show a preview
 -- for the edited version

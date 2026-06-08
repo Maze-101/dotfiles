@@ -17,3 +17,9 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 -- file explorer
 vim.keymap.set('n', '<leader>ex', vim.cmd.Ex)
+
+-- split window vertically
+vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
+
+-- split window horizontally
+vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })
