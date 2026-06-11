@@ -1,9 +1,9 @@
 if status is-interactive
     bind \b backward-kill-word
     ####### basic aliases #######
-    alias c='code'
+    alias c='vscodium'
     alias ff='fastfetch'
-    alias cdo='code ~/dotfiles/'
+    alias cdo='vscodium ~/dotfiles/'
     alias mdwm='cd ~; ./dotfiles/scripts/make.sh; cd -'
     ########### git #############
     alias gc='git commit -m'
@@ -33,12 +33,12 @@ starship init fish | source
 #######  GLOBALS  ########
 ##########################  
 
-set -gx TERMINAL "wezterm"
-set -gx BROWSER "brave"
-set -gx NOTES "obsidian"
-set -gx IDE "code"
+set -gx TERMINAL wezterm
+set -gx BROWSER brave
+set -gx NOTES obsidian
+set -gx IDE vscodium
 set -gx LAUNCHER "rofi -show drun"
-set -gx FILE_MANAGER "yazi"
+set -gx FILE_MANAGER yazi
 
 # Generated for envman. Do not edit.
 test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
