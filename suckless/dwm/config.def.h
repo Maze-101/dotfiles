@@ -84,7 +84,6 @@ static const char *downvol[] = {"/usr/bin/pactl", "set-sink-volume",
 static const char *mutevol[] = {"/usr/bin/pactl", "set-sink-mute",
                                 "@DEFAULT_SINK@", "toggle", NULL};
 static const char *lockcmd[] = {"/usr/local/bin/slock", NULL};
-static const char *termcmd[] = {"kitty", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -118,7 +117,6 @@ static const Button buttons[] = {
     /* click                event mask      button          function argument */
     {ClkLtSymbol, 0, Button1, setlayout, {0}},
     {ClkLtSymbol, 0, Button3, setlayout, {.v = &layouts[2]}},
-    {ClkStatusText, 0, Button2, spawn, {.v = termcmd}},
     {ClkClientWin, MODKEY, Button1, movemouse, {0}},
     {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
     {ClkClientWin, MODKEY, Button3, resizemouse, {0}},
