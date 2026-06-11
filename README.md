@@ -1,5 +1,5 @@
 ---
 
-![image](assets/seamless.png)
+![image](assets/void.png)
 
 ---

@@ -23,7 +23,7 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = {"󰣇", "2", "3", "4", "5", "6", "7", "8", "9"};
+static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -88,9 +88,6 @@ static const char *lockcmd[] = {"/usr/local/bin/slock", NULL};
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {0, XK_Print, spawn, {.v = screenshotcmd}},
-    {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
-    {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
-    {0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol}},
     {MODKEY, XK_l, spawn, {.v = lockcmd}},
     {MODKEY, XK_space, setlayout, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}}, // change focus to the window below

@@ -3,16 +3,24 @@
 ###############################
 
 super + b
-        $BROWSER
+        firefox
 super + Return
-        $TERMINAL
-super + o
-        $NOTES
-super + c
-        $IDE
+        st
 super + d
-        fish -c "$LAUNCHER"
+	dmenu_run
 super + y
         $TERMINAL -e "$FILE_MANAGER"
 super + p
         mpv (xclip -o)
+
+# Volume Up
+XF86AudioRaiseVolume
+        amixer set Master 10%+
+
+# Volume Down
+XF86AudioLowerVolume
+        amixer set Master 10%-
+
+# Mute/Unmute
+XF86AudioMute
+        amixer set Master toggle
