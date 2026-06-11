@@ -3,116 +3,127 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gaps between windows */
-static const unsigned int snap      = 1;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Fonts:size=10", "Noto Color Emoji:size=10" };
-static const char dmenufont[]       = "Noto Color Emoji:size=10";
-static const char col_gray1[]       = "#1b1b1b";
-static const char col_gray2[]       = "#1b1b1b";
-static const char col_gray3[]       = "#a89984";
-static const char col_gray4[]       = "#1b1b1b";
-static const char col_cyan[]        = "#86620e";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+static const unsigned int borderpx = 3; /* border pixel of windows */
+static const unsigned int gappx = 6;    /* gaps between windows */
+static const unsigned int snap = 1;     /* snap pixel */
+static const int showbar = 1;           /* 0 means no bar */
+static const int topbar = 1;            /* 0 means bottom bar */
+static const char *fonts[] = {"JetBrainsMono Nerd Fonts:size=10",
+                              "Noto Color Emoji:size=10"};
+static const char dmenufont[] = "Noto Color Emoji:size=10";
+static const char col_gray1[] = "#1b1b1b";
+static const char col_gray2[] = "#1b1b1b";
+static const char col_gray3[] = "#a89984";
+static const char col_gray4[] = "#1b1b1b";
+static const char col_cyan[] = "#86620e";
+static const char *colors[][3] = {
+    /*               fg         bg         border   */
+    [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
+    [SchemeSel] = {col_gray4, col_cyan, col_cyan},
 };
 
 /* tagging */
-static const char *tags[] = { "󰣇", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = {"󰣇", "2", "3", "4", "5", "6", "7", "8", "9"};
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Brave-browser",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "mpv",            NULL,       NULL,       1 << 7,       0,           -1 },
-	{ "Zathura",        NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "obsidian",       NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "Code",    	    NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "org.wezfurlong.wezterm",		        NULL,       NULL,       1 << 0,       0,           -1 },	
+    /* xprop(1):
+     *	WM_CLASS(STRING) = instance, class
+     *	WM_NAME(STRING) = title
+     */
+    /* class      instance    title       tags mask     isfloating   monitor */
+    {"Brave-browser", NULL, NULL, 1 << 8, 0, -1},
+    {"mpv", NULL, NULL, 1 << 7, 0, -1},
+    {"Zathura", NULL, NULL, 1 << 6, 0, -1},
+    {"obsidian", NULL, NULL, 1 << 5, 0, -1},
+    {"org.wezfurlong.wezterm", NULL, NULL, 1 << 0, 0, -1},
 };
 
 /* layout(s) */
-static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
-static const int attachbelow = 1;    /* 1 means attach after the currently active window */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
-static const int refreshrate = 120;  /* refresh rate (per second) for client move/resize */
+static const float mfact = 0.5; /* factor of master area size [0.05..0.95] */
+static const int nmaster = 1;   /* number of clients in master area */
+static const int resizehints =
+    0; /* 1 means respect size hints in tiled resizals */
+static const int attachbelow =
+    1; /* 1 means attach after the currently active window */
+static const int lockfullscreen =
+    1; /* 1 will force focus on the fullscreen window */
+static const int refreshrate =
+    120; /* refresh rate (per second) for client move/resize */
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[tile]=",      tile },    /* first entry is default */
-	{ "><float>",      NULL },    /* no layout function means floating behavior */
+    /* symbol     arrange function */
+    {"[tile]=", tile},  /* first entry is default */
+    {"><float>", NULL}, /* no layout function means floating behavior */
 };
 
 /* key definitions */
 #define MODKEY Mod4Mask
-#define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+#define TAGKEYS(KEY, TAG)                                                      \
+  {MODKEY, KEY, view, {.ui = 1 << TAG}},                                       \
+      {MODKEY | ControlMask, KEY, toggleview, {.ui = 1 << TAG}},               \
+      {MODKEY | ShiftMask, KEY, tag, {.ui = 1 << TAG}},                        \
+      {MODKEY | ControlMask | ShiftMask, KEY, toggletag, {.ui = 1 << TAG}},
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd)                                                             \
+  {                                                                            \
+    .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
+  }
 
 /* commands */
-static const char *screenshotcmd[] = { "sh", "-c", "d=~/Pictures/Screenshots; i=1; while [ -f \"$d/screenshot$i.png\" ]; do i=$((i+1)); done; f=\"$d/screenshot$i.png\"; maim -s \"$f\" && xclip -selection clipboard -t image/png -i \"$f\"", NULL };
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
-static const char *lockcmd[] = { "/usr/local/bin/slock", NULL };
-static const char *termcmd[] = { "kitty", NULL};
+static const char *screenshotcmd[] = {
+    "sh", "-c",
+    "d=~/Pictures/Screenshots; i=1; while [ -f \"$d/screenshot$i.png\" ]; do "
+    "i=$((i+1)); done; f=\"$d/screenshot$i.png\"; maim -s \"$f\" && xclip "
+    "-selection clipboard -t image/png -i \"$f\"",
+    NULL};
+static const char *upvol[] = {"/usr/bin/pactl", "set-sink-volume",
+                              "@DEFAULT_SINK@", "+10%", NULL};
+static const char *downvol[] = {"/usr/bin/pactl", "set-sink-volume",
+                                "@DEFAULT_SINK@", "-10%", NULL};
+static const char *mutevol[] = {"/usr/bin/pactl", "set-sink-mute",
+                                "@DEFAULT_SINK@", "toggle", NULL};
+static const char *lockcmd[] = {"/usr/local/bin/slock", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
-	{ 0, XF86XK_AudioLowerVolume,              spawn,          {.v = downvol } },
-	{ 0, XF86XK_AudioMute,                     spawn,          {.v = mutevol } },
-	{ 0, XF86XK_AudioRaiseVolume,              spawn,          {.v = upvol   } },
-	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },       		// change focus to the window below
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },       		// change focus to the window above
-	{ MODKEY,                       XK_h,      incnmaster,     {.i = +1 } },       		// increases  masters by 1
-	{ MODKEY,                       XK_v,      incnmaster,     {.i = -1 } },       		// decreases masters by 1
-	{ MODKEY,                       XK_x,      killclient,     {0} },  			   	 	// kill window
-	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },              		// toggle bar
-	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },     		// shrinks left window/s
-	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },     		// shrinks right window/s
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },              		// changes master window
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+    /* modifier                     key        function        argument */
+    {0, XK_Print, spawn, {.v = screenshotcmd}},
+    {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
+    {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
+    {0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol}},
+    {MODKEY, XK_l, spawn, {.v = lockcmd}},
+    {MODKEY, XK_space, setlayout, {0}},
+    {MODKEY, XK_j, focusstack, {.i = +1}}, // change focus to the window below
+    {MODKEY, XK_k, focusstack, {.i = -1}}, // change focus to the window above
+    {MODKEY, XK_h, incnmaster, {.i = +1}}, // increases  masters by 1
+    {MODKEY, XK_v, incnmaster, {.i = -1}}, // decreases masters by 1
+    {MODKEY, XK_x, killclient, {0}},       // kill window
+    {MODKEY | ShiftMask, XK_b, togglebar, {0}},         // toggle bar
+    {MODKEY | ShiftMask, XK_h, setmfact, {.f = -0.05}}, // shrinks left window/s
+    {MODKEY | ShiftMask,
+     XK_l,
+     setmfact,
+     {.f = +0.05}},                             // shrinks right window/s
+    {MODKEY | ShiftMask, XK_Return, zoom, {0}}, // changes master window
+    TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
+        TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
+            TAGKEYS(XK_9, 8){MODKEY | ShiftMask, XK_q, quit, {0}},
 };
 
 /* button definitions */
-/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
+/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,
+ * ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
-	/* click                event mask      button          function        argument */
-	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
-	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
-	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+    /* click                event mask      button          function argument */
+    {ClkLtSymbol, 0, Button1, setlayout, {0}},
+    {ClkLtSymbol, 0, Button3, setlayout, {.v = &layouts[2]}},
+    {ClkStatusText, 0, Button2, spawn, {.v = termcmd}},
+    {ClkClientWin, MODKEY, Button1, movemouse, {0}},
+    {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
+    {ClkClientWin, MODKEY, Button3, resizemouse, {0}},
+    {ClkTagBar, 0, Button1, view, {0}},
+    {ClkTagBar, 0, Button3, toggleview, {0}},
+    {ClkTagBar, MODKEY, Button1, tag, {0}},
+    {ClkTagBar, MODKEY, Button3, toggletag, {0}},
 };
-
