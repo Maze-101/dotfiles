@@ -3,7 +3,7 @@
 ###############################
 
 super + b
-        firefox
+        brave
 super + Return
         st
 super + d
