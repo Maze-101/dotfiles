@@ -1,5 +1,5 @@
 ---
 
-![image](assets/void.png)
+![image](assets/archlinux.png)
 
 ---
