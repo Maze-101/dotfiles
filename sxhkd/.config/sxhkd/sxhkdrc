@@ -12,19 +12,19 @@ super + y
         st -e "yazi"
 super + p
         mpv (xclip -o)
-super + q 
-    	powermenu.sh
 super + o
         obsidian
 
-# Volume Up
+######  scripts  ######
+
+super + q 
+    	powermenu.sh
+
+######  media  ######
+
 XF86AudioRaiseVolume
         amixer set Master 10%+
-
-# Volume Down
 XF86AudioLowerVolume
         amixer set Master 10%-
-
-# Mute/Unmute
 XF86AudioMute
         amixer set Master toggle
