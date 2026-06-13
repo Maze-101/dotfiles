@@ -12,6 +12,8 @@ super + y
         st -e "yazi"
 super + p
         mpv (xclip -o)
+super + q 
+    	powermenu.sh
 
 # Volume Up
 XF86AudioRaiseVolume

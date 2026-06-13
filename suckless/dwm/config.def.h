@@ -10,7 +10,7 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const char *fonts[] = {"JetBrainsMono Nerd Fonts:size=10",
                               "Noto Color Emoji:size=10"};
-static const char dmenufont[] = "Noto Color Emoji:size=10";
+static const char dmenufont[] = "JetBrainsMono Nerd Fonts:size=10";
 static const char col_gray1[] = "#1b1b1b";
 static const char col_gray2[] = "#1b1b1b";
 static const char col_gray3[] = "#a89984";
