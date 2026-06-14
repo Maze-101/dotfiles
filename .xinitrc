@@ -1,0 +1,6 @@
+setxkbmap -layout us,ara -option grp:alt_shift_toggle
+xsetroot -solid "#1b1b1b"
+dwmblocks &
+sxhkd &
+dwm
+
