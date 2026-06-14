@@ -14,7 +14,8 @@ super + p
         mpv (xclip -o)
 super + o
         obsidian
-
+super + c
+	flatpak run com.visualstudio.code
 ######  scripts  ######
 
 super + q 

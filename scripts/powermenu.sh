@@ -11,7 +11,7 @@ case "$chosen" in
         slock ;;
     *Reboot)
         doas reboot ;; 
-    *poweroff)
+    *Poweroff)
         doas poweroff ;; 
     *Log*Out)
         killall dwm ;;
