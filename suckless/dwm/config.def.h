@@ -74,7 +74,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *screenshotcmd[] = {
     "sh", "-c",
-    "d=~/Pictures/Screenshots; i=1; while [ -f \"$d/screenshot$i.png\" ]; do "
+    "d=~/pictures/screenshots; i=1; while [ -f \"$d/screenshot$i.png\" ]; do "
     "i=$((i+1)); done; f=\"$d/screenshot$i.png\"; maim -s \"$f\" && xclip "
     "-selection clipboard -t image/png -i \"$f\"",
     NULL};
