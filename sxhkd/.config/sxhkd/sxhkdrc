@@ -5,11 +5,11 @@
 super + b
         brave
 super + Return
-        st
+        alacritty
 super + d
 	dmenu_run
 super + y
-        st -e "yazi"
+        alacritty -e "yazi"
 super + p
         mpv (xclip -o)
 super + o
