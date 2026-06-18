@@ -17,11 +17,10 @@ eval "$(starship init bash)"
 alias ff='fastfetch'
 
 ######## system ########
+alias u='doas pacman -Syu && yay -Syu'
 alias pi='doas pacman -S'
-alias pu='doas pacman -Syu'
 alias pr='doas pacman -Rns'
 alias yi='yay -S'
-alias yu='yay -Syu'
 alias yr='yay -Rns'
 alias cdo='flatpak run com.visualstudio.code ~/dotfiles'
 alias c='flatpak run com.visualstudio.code'
