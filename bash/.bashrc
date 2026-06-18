@@ -17,13 +17,13 @@ eval "$(starship init bash)"
 alias ff='fastfetch'
 
 ######## system ########
+alias c='flatpak run com.visualstudio.code'
 alias u='doas pacman -Syu && yay -Syu'
 alias pi='doas pacman -S'
 alias pr='doas pacman -Rns'
 alias yi='yay -S'
 alias yr='yay -Rns'
-alias cdo='flatpak run com.visualstudio.code ~/dotfiles'
-alias c='flatpak run com.visualstudio.code'
+alias cdo='c ~/dotfiles'
 
 ######## yt-dlp ########
 alias pl='yt-dlp -f "bv*[height<=720]+ba/b[height<=720]" -o "%(playlist)s/%(playlist_index)02d - %(title)s.%(ext)s"'
