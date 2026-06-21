@@ -27,3 +27,6 @@ vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertical
 
 -- split window horizontally
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })
+
+-- Delete word backward in Insert mode
+vim.keymap.set('i', '<C-BS>', '<C-W>', { noremap = true })
