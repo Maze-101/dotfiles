@@ -1,11 +1,7 @@
-require("options")
-require("lazy-nvim")
-require("keymaps")
+require("config.options")
+require("config.keymaps")
+require("config.lazy")
 
 vim.diagnostic.config({
---   virtual_text = {
---       spacing = 4,
---       prefix = '●', -- Could also be '■', 'Points', etc.
---   },
     virtual_lines = true
 })

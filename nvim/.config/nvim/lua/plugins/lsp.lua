@@ -1,44 +1,40 @@
 return {
-    {
-        "neovim/nvim-lspconfig",
+  {
+    "williamboman/mason.nvim",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
     },
-    {
-        "mason-org/mason.nvim",
-        config = function()
-            require("mason").setup()
+    config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        -- Standard language servers for main languages
+        ensure_installed = {
+          "clangd",    -- C
+          "pyright",   -- Python
+          "gopls",     -- Go
+          "ts_ls",     -- JS/TS
+          "jdtls",     -- Java
+          "lua_ls",    -- Lua
+          "bashls",    -- Bash
+        },
+      })
+
+      -- Automatically set up every language server installed via mason-lspconfig
+      handlers = {
+          function(server_name)
+            lspconfig[server_name].setup({})
+          end,
+        },
+
+      -- Basic LSP keymaps (Press 'K' for docs, 'gd' to go to definition)
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          local opts = { buffer = args.buf }
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         end,
-        opt = {},
-    },
-    {
-        "mason-org/mason-lspconfig.nvim",
-        dependencies = { "mason.nvim" },
-        config = function()
-            require("mason-lspconfig").setup()
-            local mason_lspconfig = require("mason-lspconfig")
-
-            mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "clangd" },
-            })
-
-            local installed_servers = mason_lspconfig.get_installed_servers()
-
-            for _, server in ipairs(installed_servers) do
-                local cfg = vim.lsp.config[server]
-
-                if cfg then
-                    if server == "clangd" then
-                        cfg.cmd = {
-                            "clangd",
-                            "--background-index",
-                            "--clang-tidy",
-                            "--fallback-style=llvm",
-                        }
-                    end
-
-                    vim.lsp.config(server, cfg)
-                    vim.lsp.enable(server)
-                end
-            end
-        end,
-    },
+      })
+    end,
+  },
 }
