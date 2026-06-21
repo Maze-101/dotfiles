@@ -1,0 +1,15 @@
+# Main page background and text
+set default-bg                  "#1B1B1B"
+set default-fg                  "#E0E0E0"
+
+# UI elements (Status bar and Command line)
+set statusbar-bg                "#111111"
+set statusbar-fg                "#E0E0E0"
+set inputbar-bg                 "#1B1B1B"
+set inputbar-fg                 "#E0E0E0"
+
+# Recolor settings to force PDFs to use this background
+set recolor                     "true"
+set recolor-keephue             "false"
+set recolor-lightcolor          "#1B1B1B"
+set recolor-darkcolor           "#E0E0E0"
