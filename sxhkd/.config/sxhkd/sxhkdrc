@@ -15,11 +15,13 @@ super + p
 super + o
         obsidian
 super + c
-	flatpak run com.visualstudio.code
+    	flatpak run com.visualstudio.code
 ######  scripts  ######
 
 super + q 
     	powermenu.sh
+super + r
+        record.sh
 
 ######  media  ######
 
