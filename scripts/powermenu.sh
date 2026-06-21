@@ -4,7 +4,7 @@
 options="Lock\nReboot\nPoweroff\nLog Out\n"
 
 # Launch dmenu 
-chosen=$(echo -e "$options" | dmenu -i -p "Power:" -fn "Monospace-10" -nb "#222222" -nf "#bbbbbb" -sb "#005577" -sf "#eeeeee")
+chosen=$(echo -e "$options" | dmenu -i -p "Power:")
 
 case "$chosen" in
     *Lock)
