@@ -5,7 +5,7 @@ return {
     config = function()
       require("nvim-treesitter.config").setup({
         -- Main languages
-        ensure_installed = { "c", "python", "go", "javascript", "typescript", "java", "lua", "bash" },
+        ensure_installed = { "c", "python", "lua", "bash" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },

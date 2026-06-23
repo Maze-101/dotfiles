@@ -12,33 +12,10 @@ return {
         ensure_installed = {
           "clangd",    -- C
           "pyright",   -- Python
-          "gopls",     -- Go
-          "ts_ls",     -- JS/TS
-          "jdtls",     -- Java
           "lua_ls",    -- Lua
           "bashls",    -- Bash
         },
       })
-
-    vim.lsp.config('ts_ls', {
-      handlers = {
-        ["textDocument/publishDiagnostics"] = function(_, params, client_id, config)
-          if params.diagnostics ~= nil then
-            local idx = 1
-            while idx <= #params.diagnostics do
-              if params.diagnostics[idx].code == 80001 then
-                table.remove(params.diagnostics, idx)
-              else
-                idx = idx + 1
-              end
-            end
-          end
-          vim.lsp.diagnostic.on_publish_diagnostics(_, params, client_id, config)
-        end,
-      },
-    })
-
-    vim.lsp.enable('ts_ls')
 
       -- Automatically set up every language server installed via mason-lspconfig
       handlers = {
