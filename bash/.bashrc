@@ -23,7 +23,6 @@ alias pr='doas pacman -Rns'
 alias yi='yay -S'
 alias yr='yay -Rns'
 alias vdo='nvim ~/dotfiles'
-alias v='nvim'
 
 ######## yt-dlp ########
 alias pl='yt-dlp -f "bv*[height<=720]+ba/b[height<=720]" -o "%(playlist)s/%(playlist_index)02d - %(title)s.%(ext)s"'
