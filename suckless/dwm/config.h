@@ -31,6 +31,7 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
+    { "jetbrains-toolbox", NULL, NULL, 0, 1, -1 },
     {"Brave", NULL, NULL, 1 << 8, 0, -1},
     {"mpv", NULL, NULL, 1 << 7, 0, -1},
     {"Zathura", NULL, NULL, 1 << 6, 0, -1},
