@@ -9,7 +9,7 @@ alias ls='ls -l --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/dotfiles/scripts:$HOME/bin:$PATH"
 export XDG_CURRENT_DESKTOP=dwm
 
 bind '"\x08": backward-kill-word'
