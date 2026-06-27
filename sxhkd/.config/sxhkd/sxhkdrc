@@ -12,8 +12,8 @@ super + y
         alacritty -e "yazi"
 super + p
         mpv (xclip -o)
-super + o
-        obsidian
+super + z
+        zennotes
 super + c
     	flatpak run com.visualstudio.code
 ######  scripts  ######
