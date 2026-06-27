@@ -9,8 +9,9 @@ alias ls='ls -l --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-export PATH="$HOME/dotfiles/scripts:$HOME/bin:$PATH"
+export JAVA_HOME="/home/shikigami/jdk/jdk-26.0.1/"
 export XDG_CURRENT_DESKTOP=dwm
+export PATH="$JAVA_HOME/bin:$HOME/dotfiles/scripts:$PATH"
 
 bind '"\x08": backward-kill-word'
 eval "$(starship init bash)"
