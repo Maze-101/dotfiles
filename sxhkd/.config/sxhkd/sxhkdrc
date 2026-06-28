@@ -12,10 +12,12 @@ super + y
         alacritty -e "yazi"
 super + p
         mpv (xclip -o)
-super + z
-        zennotes
+super + o
+        obsidian
 super + c
-    	flatpak run com.visualstudio.code
+    	code
+super + t
+        jetbrains-toolbox
 ######  scripts  ######
 
 super + q 
