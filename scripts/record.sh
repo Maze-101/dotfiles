@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory where recordings will be saved
-REC_DIR="$HOME/videos"
+REC_DIR="$HOME/Videos"
 
 # Timestamp format for unique filenames
 FILENAME="$REC_DIR/recording_$(date +%m-%d).mp4"
