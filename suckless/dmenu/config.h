@@ -12,7 +12,7 @@ static const char *colors[SchemeLast][2] = {
                     "#1b1b1b"}, /* Cream text on custom dark background */
     [SchemeSel] =
         {"#1b1b1b",
-         "#d79921"}, /* Custom dark text on Gruvbox yellow selection */
+         "#8ec07c"}, /* Custom dark text on Gruvbox red selection */
     [SchemeOut] =
         {"#000000",
          "#8ec07c"}, /* Black text on Gruvbox aqua for multi-select output */
