@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Define options matching a minimalist dwm aesthetic
 options="Lock\nReboot\nPoweroff\nLog Out\n"
