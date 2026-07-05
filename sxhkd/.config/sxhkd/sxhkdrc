@@ -7,7 +7,7 @@ super + b
 super + Return
         alacritty
 super + d
-	dmenu_run
+    	dmenu_run
 super + y
         alacritty -e "yazi"
 super + p
