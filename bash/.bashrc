@@ -1,6 +1,4 @@
-#
-# ~/.bashrc
-#
+#!/bin/bash
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -9,9 +7,7 @@ alias ls='ls -l --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-export SCRIPTS="$HOME/dotfiles/scripts"
-export XDG_CURRENT_DESKTOP=dwm
-export PATH="$SCRIPTS:$PATH"
+export PATH="$PATH"
 
 bind '"\x08": backward-kill-word'
 eval "$(starship init bash)"
@@ -19,13 +15,9 @@ eval "$(starship init bash)"
 alias ff='fastfetch'
 
 ######## system ########
-alias u='doas pacman -Syu && yay -Syu'
+alias u='doas apt update'
+alias i='doas apt install'
 
 ######## yt-dlp ########
 alias pl='yt-dlp -f "bv*[height<=720]+ba/b[height<=720]" -o "%(playlist)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 alias v='yt-dlp -S "res:720" --embed-chapters -o "%(title)s.%(ext)s"'
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-. "$HOME/.local/bin/env"
