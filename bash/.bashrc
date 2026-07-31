@@ -21,3 +21,7 @@ alias i='doas apt install'
 ######## yt-dlp ########
 alias pl='yt-dlp -f "bv*[height<=720]+ba/b[height<=720]" -o "%(playlist)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 alias v='yt-dlp -S "res:720" --embed-chapters -o "%(title)s.%(ext)s"'
+
+# >>> Codex installer >>>
+export PATH="/home/shiki/.local/bin:$PATH"
+# <<< Codex installer <<<
