@@ -18,6 +18,7 @@ alias ff='fastfetch'
 alias u='doas apt update'
 alias i='doas apt install'
 alias p='doas systemctl poweroff'
+alias byto='./byto-linux-amd64'
 
 # >>> Codex installer >>>
 export PATH="/home/shiki/.local/bin:$PATH"
