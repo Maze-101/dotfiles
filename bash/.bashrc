@@ -15,7 +15,7 @@ eval "$(starship init bash)"
 alias ff='fastfetch'
 
 ######## system ########
-alias u='doas apt update'
+alias u='doas apt update && doas apt upgrade'
 alias i='doas apt install'
 alias p='doas systemctl poweroff'
 alias byto='./byto-linux-amd64'
