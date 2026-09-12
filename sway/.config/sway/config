@@ -52,14 +52,14 @@ bindsym $mod+b exec firefox
 bindsym $mod+e exec nautilus
 bindsym $mod+x kill
 bindsym $mod+space exec swaymsg input type:keyboard xkb_switch_layout next
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exit
 
 # Screenshot keybindings
 bindsym --to-code Print exec grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$(date +'%Y-%m-%d_%H%M%S').png | wl-copy
 
 # Screen Lock
-bindsym --to-code $mod+l exec ~/.config/sway/lock.sh
+bindsym --to-code $mod+Escape exec ~/.config/sway/lock.sh
 
 ### Audio Controls (via pamixer)
 # Dedicated media keys
@@ -69,8 +69,8 @@ bindsym XF86AudioRaiseVolume exec pamixer -i 5
 
 # Direct F1, F2, F3 bindings (uncomment if you don't use Fn key)
 # bindsym F1 exec pamixer -t
-# bindsym F2 exec pamixer -d 5
-# bindsym F3 exec pamixer -i 5
+# bindsym F2 exec pamixer -d 10
+# bindsym F3 exec pamixer -i 10
 
 # Navigation
 bindsym $mod+h focus left

@@ -50,21 +50,12 @@ Install the packages listed above with your Debian package manager before starti
 | `Super` + `E` | Open Nautilus |
 | `Super` + `X` | Close the focused window |
 | `Super` + `Space` | Switch between US and Arabic keyboard layouts |
-| `Super` + `Shift` + `C` | Reload Sway |
+| `Super` + `Shift` + `R` | Reload Sway |
 | `Super` + `Shift` + `E` | Exit Sway |
 | `Print` | Select an area, save it to `~/Pictures/Screenshots`, and copy it to the clipboard |
 | `Super` + `H` / `J` / `K` / `L` | Focus left / down / up / right |
 | `Super` + `Shift` + `H` / `J` / `K` / `L` | Move the focused window left / down / up / right |
 | `Super` + `1`–`5` | Switch to workspace 1–5 |
 | `Super` + `Shift` + `1`–`5` | Move the focused window to workspace 1–5 |
-| Media mute / volume keys | Toggle mute / lower volume 5% / raise volume 5% |
-
-`Super` + `L` is also configured to run the lock script, but it overlaps with the later “focus right” binding. If locking is the intended behavior, remove or change one of those two bindings in the Sway config.
-
-## Defaults
-
-- Five persistent workspaces and 2 px borders with small gaps.
-- US and Arabic keyboard layouts; touchpad tap-to-click, natural scrolling, middle-button emulation, and disable-while-typing.
-- Waybar and Mako start with Sway; Bluetooth uses Blueman.
-- Screenshots are timestamped as `screenshot_YYYY-MM-DD_HHMMSS.png`.
-- `mpv` uses GPU output, automatic hardware decoding, display-resampled video, and prefers streams up to 720p/30fps.
+| `Super` + `Escape` | Run the lock script |
+| Media mute / volume keys | Toggle mute / lower volume 10% / raise volume 10% |
