@@ -64,8 +64,8 @@ bindsym --to-code $mod+Escape exec ~/.config/sway/lock.sh
 ### Audio Controls (via pamixer)
 # Dedicated media keys
 bindsym XF86AudioMute exec pamixer -t
-bindsym XF86AudioLowerVolume exec pamixer -d 5
-bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 10
+bindsym XF86AudioRaiseVolume exec pamixer -i 10
 
 # Direct F1, F2, F3 bindings (uncomment if you don't use Fn key)
 # bindsym F1 exec pamixer -t
