@@ -10,7 +10,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # Ensure Waybar starts with Sway
-exec_always waybar
+exec waybar
 
 # Gruvbox Dark Palette
 set $bg      #282828
@@ -50,7 +50,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
 
 # Screenshot keybindings
-bindsym --to-code Print exec grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$('%Y-%m-%d_%H%M%S').png | wl-copy
+bindsym --to-code Print exec grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$(date +'%Y-%m-%d_%H%M%S').png | wl-copy
 
 # Screen Lock
 bindsym --to-code $mod+l exec ~/.config/sway/lock.sh
@@ -93,4 +93,12 @@ bindsym $mod+Shift+5 move container to workspace number 5
 input "type:keyboard" {
     xkb_layout "us,ara"
     xkb_variant ","
+}
+
+### Touchpad Configuration
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
 }
