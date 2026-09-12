@@ -1,0 +1,41 @@
+window {
+    background-color: #282828;
+    border: 2px solid #d79921;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#input {
+    margin: 10px;
+    padding: 8px 12px;
+    border: 1px solid #504945;
+    border-radius: 4px;
+    color: #ebdbb2;
+    background-color: #1d2021;
+}
+
+#inner-box {
+    margin: 5px 10px 10px 10px;
+    background-color: #282828;
+}
+
+#outer-box {
+    margin: 0px;
+    background-color: #282828;
+}
+
+#text {
+    margin: 4px;
+    color: #ebdbb2;
+}
+
+#entry:selected {
+    background-color: #d79921;
+    border-radius: 4px;
+}
+
+#entry:selected #text {
+    color: #1d2021;
+    font-weight: bold;
+}

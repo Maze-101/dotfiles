@@ -1,5 +1,9 @@
 ---
 
-![image](assets/archlinux.png)
+![image](assets/empty.png)
+
+---
+
+![image](assets/busy.png)
 
 ---
