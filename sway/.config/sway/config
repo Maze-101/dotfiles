@@ -12,6 +12,12 @@ exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 # Ensure Waybar starts with Sway
 exec waybar
 
+# Bluetooth
+exec --no-startup-id blueman-applet
+
+# mako
+exec --no-startup-id mako
+
 # Gruvbox Dark Palette
 set $bg      #282828
 set $red     #cc241d
