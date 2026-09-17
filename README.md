@@ -2,7 +2,7 @@
 
 A compact Debian + Sway desktop: Gruvbox Dark, keyboard-first tiling, and a small Wayland-native toolset. The configurations are arranged as stow-style packages, with each application’s files under its usual home-directory path.
 
-> The Sway wallpaper path is `~/dotfiles/wallpapers/wall.jpg`; keep the repository at `~/dotfiles` or update that line in `sway/.config/sway/config`.
+> The Sway wallpaper path is `~/dotfiles/wallpapers/<file_name>.png`; keep the repository at `~/dotfiles` or update that line in `sway/.config/sway/config`.
 
 ## Preview
 
