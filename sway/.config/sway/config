@@ -42,7 +42,7 @@ gaps inner 6
 gaps outer 2
 
 # Wallpaper
-output * bg ~/dotfiles/wallpapers/wall.jpg fill
+output * bg ~/dotfiles/wallpapers/tokyo.png fill
 
 # Core Keybindings
 bindsym $mod+Return exec $term
