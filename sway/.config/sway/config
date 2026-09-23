@@ -48,7 +48,7 @@ output * bg ~/dotfiles/wallpapers/tokyo.png fill
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
 bindsym $mod+c exec code
-bindsym $mod+b exec firefox
+bindsym $mod+b exec chromium
 bindsym $mod+e exec nautilus
 bindsym $mod+x kill
 bindsym $mod+space exec swaymsg input type:keyboard xkb_switch_layout next

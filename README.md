@@ -46,7 +46,7 @@ Install the packages listed above with your Debian package manager before starti
 | `Super` + `Enter` | Open Alacritty |
 | `Super` + `D` | Open Wofi application launcher |
 | `Super` + `C` | Open VS Code |
-| `Super` + `B` | Open Firefox |
+| `Super` + `B` | Open Chromium |
 | `Super` + `E` | Open Nautilus |
 | `Super` + `X` | Close the focused window |
 | `Super` + `Space` | Switch between US and Arabic keyboard layouts |
