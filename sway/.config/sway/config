@@ -54,6 +54,7 @@ bindsym $mod+x kill
 bindsym $mod+space exec swaymsg input type:keyboard xkb_switch_layout next
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exit
+bindsym $mod+f fullscreen toggle
 
 # Screenshot keybindings
 bindsym --to-code Print exec grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$(date +'%Y-%m-%d_%H%M%S').png | wl-copy
